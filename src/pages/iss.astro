@@ -1,14 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ISSPositions from '../components/ISSPositions.vue';
 ---
 
 <Layout title="ISS Tracker">
-  <h1>International Space Station (ISS) Tracker</h1>
-  <p>Track the current position of the International Space Station in real-time.</p>
-  <iframe
-    src="https://spotthestation.nasa.gov/tracking_map.cfm"
-    width="100%"
-    height="600"
-    frameborder="0"
-    allowfullscreen
-  ></iframe>
+  <h2>Live International Space Station Coordinates</h2>
+  <ISSPositions client:load />
+</Layout>  
