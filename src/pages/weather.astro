@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SpaceWeather from '../components/SpaceWeather.vue';
+---
+
+<Layout title="Space Weather">
+    <h2>Real-time Space Weather Data</h2>
+    <SpaceWeather client:load />
+</Layout>
