@@ -36,4 +36,16 @@ import { placements } from 'astro/runtime/client/dev-toolbar/ui-library/window.j
         color: #eee;
         box-shadow: 0 0 5px rgba(100, 255, 255, 0.1);
     }
+
+    .planet-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .planet-icon {
+        width: 24px;
+        height: 24px;
+        opacity: 0.85;
+    }
 </style>
