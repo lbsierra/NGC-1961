@@ -1,11 +1,35 @@
 <template>
     <section id="space-weather">
-        <WeatherPanel title="Solar Flares" :events="flareEvents" />
-        <WeatherPanel title="Coronal Mass Ejections" :events="cmeEvents" />
-        <WeatherPanel title="Geomagnetic Storms" :events="stormEvents" />
-        <WeatherPanel title="Solar Particle Events" :events="speEvents" />
-        <WeatherPanel title="Radio Blackouts" :events="radioEvents" />
-        <WeatherPanel title="Interplanetary Shocks" :events="shockEvents" />
+        <WeatherPanel title="Solar Flares" :events="flareEvents">
+            <template #icon>
+                <img src="/icons/sun.svg" alt="Solar Flare Icon" class="weather-icon" />
+            </template>
+        </WeatherPanel>
+        <WeatherPanel title="Coronal Mass Ejections" :events="cmeEvents">
+            <template #icon>
+                <img src="/icons/plasma.svg" alt="CME Icon" class="weather-icon" />
+            </template>
+        </WeatherPanel>
+        <WeatherPanel title="Geomagnetic Storms" :events="stormEvents">
+            <template #icon>
+                <img src="/icons/waves.svg" alt="Geomagnetic Storms Icon" class="weather-icon" />
+            </template>
+        </WeatherPanel>
+        <WeatherPanel title="Solar Particle Events" :events="speEvents">
+            <template #icon>
+                <img src="/icons/sun-dust.svg" alt="SPE Icon" class="weather-icon" />
+            </template>
+        </WeatherPanel>
+        <WeatherPanel title="Radio Blackouts" :events="radioEvents">
+            <template #icon>
+                <img src="/icons/radio.svg" alt="Radio Icon" class="weather-icon" />
+            </template>
+        </WeatherPanel>
+        <WeatherPanel title="Interplanetary Shocks" :events="shockEvents">
+            <template #icon>
+                <img src="/icons/shocks.svg" alt="Interplanetary Shocks Icon" class="weather-icon" />
+            </template>
+        </WeatherPanel>
     </section>
 </template>
 
