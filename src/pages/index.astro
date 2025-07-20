@@ -1,11 +1,28 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import '../styles/index.css';
 ---
 
 <Layout>
-	<Welcome />
+	<section id="mission-control">
+	<section class="title-box">
+		<h1 class="main-title">Mission Control</h1>
+	</section>	
+	<section class="svg-box">
+		<svg viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet" style="width: 1000; height: 300; margin: 0 auto; z-index: 1; position: relative">
+  		<path d="M60,60 
+           L120,0 
+           L880,0 
+           L940,60 
+           L940,240 
+           L880,300 
+           L120,300 
+           L60,240 
+           Z"
+        fill="#000"
+        stroke="#fff"
+        stroke-width="5"/>
+		</svg>
+	</section>
+	</section>	
 </Layout>

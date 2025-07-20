@@ -1,6 +1,7 @@
 
 ---
 const { title = "NGC-1961" } = Astro.props;
+import '../styles/global.css';
 ---
 
 <!DOCTYPE html>
@@ -9,9 +10,9 @@ const { title = "NGC-1961" } = Astro.props;
     <meta charset="UTF-8" />
     <title>{title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/global.css" />
   </head>
   <body>
+    <div class="bg-wrap"></div>
     <header>
       <h1>NGC-1961</h1>
     </header>
@@ -19,18 +20,5 @@ const { title = "NGC-1961" } = Astro.props;
     <main>
       <slot /> 
     </main>
-
-    <footer>
-      <p>Built with 🚀</p>
-    </footer>
   </body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
