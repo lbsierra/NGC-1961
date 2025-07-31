@@ -24,7 +24,7 @@
             <template #icon>
                 <img src="/icons/radio.svg" alt="Radio Icon" class="weather-icon" />
             </template>
-        </WeatherPanel>
+        </WeatherPanel>n
         <WeatherPanel title="Interplanetary Shocks" :events="shockEvents">
             <template #icon>
                 <img src="/icons/shocks.svg" alt="Interplanetary Shocks Icon" class="weather-icon" />
@@ -36,7 +36,16 @@
 <script setup>
     import { ref, onMounted } from 'vue';
     import WeatherPanel from './WeatherPanel.vue';
-    import { fetchDONKIEvents } from '@/utils/donki.js';
+    import { fetchDONKIEvents } from '../utils/donki.js';
+
+    const props = defineProps({
+        apiKey: {
+            type: String,
+        }
+    });
+
+    const key = props.apiKey;
+    console.log("API Key in Vue:", key);
 
     const today = new Date();
     const end = today.toISOString().slice(0, 10);
@@ -44,8 +53,6 @@
     const startObj = new Date(today);
     startObj.setDate(today.getDate() - 7);
     const start = startObj.toISOString().slice(0, 10);
-    
-    const key = import.meta.env.VITE_NASA_API_KEY;
 
     const flareEvents = ref([]);
     const cmeEvents = ref([]);

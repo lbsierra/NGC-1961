@@ -1,72 +1,65 @@
-	
-	#mission-control {
-		text-align: center;
-		padding: 2rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+#mission-control {
+	text-align: center;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
 
-	.svg-box svg {
-		width: 100%;
-		max-width: 800px;
-		height: auto;
-		display: block;
-	}
+.svg-box {
+	position: relative;
+	width: 1000px;
+	height: 300px;
+	margin: 0 auto;	
+}
 
-/*	h1 {
-		font-size: 2rem;
-		margin-bottom: 2rem;
-		color: #eee;
-	}
+.svg-box svg {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+}
 
-	#m-control {
-		margin-top: 20px;
-	}
-	.module-container {
-		background-color: #000;
-		border: 3px solid red;
-		padding: 2rem;
-		height: 250px;
-		width: 80%;
-		max-width: 1000px;
-		color: #fff;
-		clip-path: polygon(
-			0% 12%,
-			5% 0%,
-			95% 0%,
-			100% 12%,
-			100% 88%,
-			95% 100%,
-			5% 100%,
-			0% 88%
-		);
-	} 
+.landing-link {
+	position: absolute;
+	top: 50px;
+	z-index: 2;
+	text-decoration: none;
+	font-size: 1rem;
+}	
 
-	.module {
-		flex: 1;
-		padding: 2rem;
-		color: #eee;
-		text-decoration: none;
-		text-align: center;
-		font-weight: bold;	
-		flex-wrap: wrap;
-		background-color: #0b0e15;
-	}
+#iss-link {
+	left: 125px;
+}
 
-	.module:hover {
-		box-shadow: 0 0 15px rgba(200, 255, 255, 0.4);
-		background-color: #1e293b;
-	}
+#weather-link {
+	left: 425px;
+}
 
-	@media (max-width: 768px) {
-		.module-container {
-			flex-direction: column;
-			clip-path: none;
-		}
+#exoplanet-link {
+	left: 700px;
+}
 
-		.module {
-			border-radius: 12px;
-		}
-	} */
+.landing-link a {
+	color: #fff;
+	text-align: center;
+	display: inline-block;
+	width: 150px;
+	font-family: 'Orbitron', sans-serif;
+}
+
+.landing-icon {
+	width: 40px;
+	color: #fff;
+}
+
+.landing-icon svg {
+	width: 150px;
+	height: 150px;
+}
+
+a {
+	text-decoration: none;
+	top: 20px;
+}

@@ -1,0 +1,26 @@
+#iss-main {
+	text-align: center;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#iss-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#coordinates, #map {
+    flex: 1;
+    padding: 1rem;
+}
+
+#iss-p {
+    font-size: 1rem;
+}

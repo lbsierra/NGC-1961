@@ -14,6 +14,7 @@
                 <p v-if="event.sourceLocation"><strong>Location:</strong> {{ event.sourceLocation }}</p>
                 <p v-if="event.cmeAnalyses?.[0]?.speed"><strong>Speed:</strong> {{ event.cmeAnalyses[0].speed }} km/s</p>
                 <p v-if="event.kpIndex?.[0].kpIndex"><strong>KP Index:</strong> {{ event.kpIndex[0].kpIndex }}</p>
+                <p v-if="event.note"><strong>Note:</strong> {{ event.note }}</p>
             </li>       
         </ul>
     </div>

@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SpaceWeather from '../components/SpaceWeather.vue';
+
+const apiKey = import.meta.env.VITE_NASA_API_KEY;
 ---
 
 <Layout title="Space Weather">
     <h2>Real-time Space Weather Data</h2>
-    <SpaceWeather client:load />
+    <SpaceWeather client:load apiKey={apiKey} />
 </Layout>

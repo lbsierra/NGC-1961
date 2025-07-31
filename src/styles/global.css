@@ -26,11 +26,18 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Orbitron';
+    src: url('/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .bg-wrap {
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: url('/starsbg.gif') repeat center center;
+    background: url('/bgstars.gif') repeat center center;
     background-size: auto;
     image-rendering: pixelated;
     height: 100vh;
@@ -74,3 +81,16 @@ header {
     border: 1px solid #fff;
 }
 
+.content-box {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    border-radius: 8px;
+    border: 1px solid #fff;   
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
