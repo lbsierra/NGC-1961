@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ISSPositions from '../components/ISSPositions.vue';
+import ISSMap from '../components/ISSMap.vue';
 import '../styles/iss.css';
 ---
 
@@ -17,7 +18,7 @@ import '../styles/iss.css';
   <ISSPositions client:load />
       </section>
         <section id="map" class="content-box">
-      <p>map here soon &#x2661;</p>
+      <ISSMap client:only="vue" />
     </section> 
     </section>
   </section>

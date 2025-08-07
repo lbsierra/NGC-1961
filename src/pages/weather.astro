@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SpaceWeather from '../components/SpaceWeather.vue';
 
-const apiKey = import.meta.env.VITE_NASA_API_KEY;
+const apiKey = import.meta.env.VITE_NASA_API_KEY || 'DEMO_KEY'; // Fallback to demo key if not set
 ---
 
 <Layout title="Space Weather">

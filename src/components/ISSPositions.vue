@@ -11,7 +11,6 @@
 </template>
 
 <script setup>
-   /* console.log("Vite Inline Env Test:", import.meta.env.VITE_INLINE_TEST); */
     import { ref, onMounted } from 'vue';
     import '../env-test.js';
 
