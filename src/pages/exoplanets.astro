@@ -1,40 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PlanetCard from '../components/PlanetCard.vue';
-import { fetchExoplanets } from '../utils/exoplanetData';
-
-const allExoplanets = await fetchExoplanets();
-
-const galaxyMap = {
-    'Kepler': allExoplanets.filter(p => p.hostname.startsWith('Kepler')),
-    'TRAPPIST-1': allExoplanets.filter(p => p.hostname.startsWith('TRAPPIST-1')),
-    'Other': allExoplanets.filter(p => !p.hostname.startsWith('Kepler') && !p.hostname.startsWith('TRAPPIST-1'))
-}
-
-const selectedGalaxy = 'Kepler';
-const visiblePlanets = galaxyMap[selectedGalaxy];
+import ExoplanetCatalog from '../components/ExoplanetCatalog.vue';
 ---
 
 <Layout>
-    <section id="exoplanet-catalog">
-        <h2>Exoplanet Catalog</h2>
-        <div class="planet-grid">
-            {visiblePlanets.map(planet => (
-                <PlanetCard planet={planet} />
-            ))}
-        </div>
-    </section>
+  <ExoplanetCatalog client:load />
 </Layout>
-
-<style>
-    #exoplanet-catalog {
-        padding: 2rem;
-        gap: 1rem;
-    }
-
-    .planet-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1.5rem;
-    }
-</style>

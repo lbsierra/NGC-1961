@@ -2,6 +2,8 @@
     <section id="exoplanet-catalog">
         <h2>Exoplanet Catalog</h2>
 
+        <div v-if="loading">Loading exoplanets...</div>
+        <div v-else>
         <div class="controls">
             <label for="host-select">Host Star:</label>
             <select id="host-select" v-model="selectedHostStar" @change="currentPage = 1">
@@ -23,23 +25,27 @@
             <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
             <span>Page {{ currentPage }} of {{ totalPages }}</span>
             <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>
+        </div>
+    </div>    
     </section>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
 import PlanetCard from './PlanetCard.vue';
-import { fetchExoplanets } from '../utils/exoplanetData.ts';
+import { fetchExoplanets } from '../utils/exoplanetData.js';
 
 const allPlanets = ref([]);
 const selectedHostStar = ref('');
 const currentPage = ref(1);
 const pageSize = 10;
+const loading = ref(true);
 
 fetchExoplanets().then(data => {
     allPlanets.value = data;
     const topHosts = getTopHostStars(data, 10);
     selectedHostStar.value = topHosts[0] || '';
+    loading.value = false;
 });
 
 function getTopHostStars(planets, limit = 10) {
@@ -56,11 +62,11 @@ function getTopHostStars(planets, limit = 10) {
 const hostStars = computed(() => getTopHostStars(allPlanets.value, 10));
 
 const filteredPlanets = computed(() => {
-    allPlanets.value.filter(p => p.hostname === selectedHostStar.value);
+    return allPlanets.value.filter(p => p.hostname === selectedHostStar.value);
 });
 
 const totalPages = computed(() => {
-    Math.ceil(filteredPlanets.value.length / pageSize);
+   return Math.ceil(filteredPlanets.value.length / pageSize);
 });
 
 const visiblePlanets = computed(() => {
