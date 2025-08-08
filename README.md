@@ -51,7 +51,6 @@ Make sure you have Node.js v16+ installed.
 
 In a new terminal:
 
-`terminal`
 `npm run dev`
 
 The project runs in the browser at http://localhost:4321/
