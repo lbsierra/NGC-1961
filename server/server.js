@@ -38,6 +38,36 @@ app.get('/api/exoplanets', async (req, res) => {
     }
 });
 
+app.get('/api/geocode', async (req, res) => {
+    const { lat, lon } = req.query;
+
+    if (!lat || !lon) {
+        return res.status(400).json({ error: 'Missing latitude or longitude' });
+    }
+
+    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}&zoom=5&addressdetails=1&accept-language=en`;
+
+    try {
+        const response = await fetch(url, {
+            headers: {
+                'User-Agent': 'NGC-1961/1.0 (lbsierra@outlook.com)'
+            }
+        });
+
+        if (!response.ok) {
+            const text = await response.text();
+            console.error('Geocoding error response:', text);
+            return res.status(response.status).json({ error: 'Geocoding fetch failed' });
+        }
+
+        const data = await response.json();
+        res.json({ location: data.display_name });
+    } catch (err) {
+        console.error('Error fetching geocode data:', err);
+        res.status(500).json({ error: 'Failed to fetch geocode data' });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

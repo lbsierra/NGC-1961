@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ISSPositions from '../components/ISSPositions.vue';
-import ISSMap from '../components/ISSMap.vue';
+import ISSWrapper from '../components/ISSWrapper.vue';
 import '../styles/iss.css';
 ---
 
@@ -10,16 +9,7 @@ import '../styles/iss.css';
     <section class="title-box">
       <h1 class="main-title">ISS Tracker</h1>
     </section>
-    
-    <section id="iss-box">
-      <section id="coordinates" class="content-box">
-    <h2>Coordinates</h2>
-    <p id="iss-p">Track the location of the International Space Station in real time.</p>
-  <ISSPositions client:load />
-      </section>
-        <section id="map" class="content-box">
-      <ISSMap client:only="vue" />
-    </section> 
-    </section>
+
+    <ISSWrapper client:only="vue" />
   </section>
-</Layout>  
+</Layout>
