@@ -33,11 +33,19 @@ button {
     color: #eee;
     border: 1px solid #555;
     border-radius: 4px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 button.active {
     background: #4aa3df;
-    border-color: #4aa3df;
+    border-color: #0a0b0c;
     color: #fff;
+}
+
+@media (max-width: 768px) {
+    button {
+        font-size: 1.5rem;
+        padding: 0.75rem 1.5rem;
+    }
 }
 </style>

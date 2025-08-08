@@ -72,21 +72,4 @@ onMounted(async () => {
     max-width: 500px;
 }
 
-.epic-image {
-    border: 2px solid #4aa3df;
-    border-radius: 8px;
-}
-
-.space-image {
-    max-width: 55%;
-    height: auto;
-}
-
-.image-holder {
-    width: 100%;
-    max-width: 600px;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-}
-
 </style>

@@ -59,7 +59,12 @@ const filteredPlanets = computed(() => {
 </script>
 
 <style scoped>
+h2 {
+    font-family: 'Orbitron', sans-serif;
+}
+
 #exoplanet-catalog {
+    margin: 2rem auto;
     padding: 2rem;
     background-color: #0b0e15;
     color: #eee;
@@ -78,6 +83,11 @@ select {
     color: #eee;
     border: 1px solid #444;
     border-radius: 4px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+label {
+    font-family: 'Orbitron', sans-serif;
 }
 
 .planet-grid {
@@ -85,4 +95,18 @@ select {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
 }
-</style>
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    label, select {
+        font-size: 1.5rem;
+    }
+
+    .planet-card {
+        font-size: 1.5rem;
+    }
+}
+</style>    

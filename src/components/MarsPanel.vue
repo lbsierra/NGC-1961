@@ -3,7 +3,7 @@
     <section class="rover">
       <h3>Latest from Mars</h3>
       <div class="image-holder">
-        <img v-if="imageUrl" :src="imageUrl" :alt="imgAlt" class="rover-img" />
+        <img v-if="imageUrl" :src="imageUrl" :alt="imgAlt" class="space-image rover-img" />
         <p v-else>Loading Martian surface...</p>
       </div>
       <div v-if="roverMeta">
@@ -50,7 +50,7 @@ onMounted(async () => {
     if (response.ok && data.latest_photos.length > 0) {
       const latest = data.latest_photos[0];
       imageUrl.value = latest.img_src;
-      imgAlt.value = `Image from ${latest.camera.full_name}, captured by Perseverance on Sol ${latest.sol}`;
+      imgAlt.value = `Image from ${latest.camera.full_name}, captured on Sol ${latest.sol}`;
       roverMeta.value = {
         camera: latest.camera.full_name,
         sol: latest.sol,
@@ -63,10 +63,10 @@ onMounted(async () => {
         cameraInfo.value = cameraDescriptions[shortName];
       }
     } else {
-      console.error('Failed to fetch Perseverance image');
+      console.error('Failed to fetch image');
     }
   } catch (error) {
-    console.error('Error fetching Perseverance image:', error);
+    console.error('Error fetching image:', error);
   }
 });
 </script>
@@ -81,19 +81,5 @@ onMounted(async () => {
   border-radius: 10px;
   max-width: 500px;
   color: #eee;
-}
-
-.image-holder {
-  width: 100%;
-  max-width: 600px;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
-
-.rover-image {
-  max-width: 55%;
-  height: auto;
-  border: 2px solid #ff6ff1;
-  border-radius: 8px;
 }
 </style>

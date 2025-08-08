@@ -26,3 +26,60 @@
 #iss-p {
     font-size: 1rem;
 }
+
+@media (max-width: 768px) {
+  header {
+	font-size: 1.3rem;
+  }
+
+  #iss-main {
+    padding: 3rem 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  #iss-box {
+    flex-direction: column;
+    width: 90%;
+    gap: 1rem;
+    margin-top: 5rem;
+  }
+
+  #coordinates,
+  #map {
+    padding: 0.8rem;
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #iss-main {
+    padding: 1.5rem 1rem;
+  }
+
+  #iss-box {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  #coordinates,
+  #map {
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  #iss-p {
+    font-size: 0.85rem;
+  }
+}

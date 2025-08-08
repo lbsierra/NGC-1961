@@ -3,8 +3,8 @@
         <h3>Astronomy Picture of the Day</h3>
         <div v-if="imageUrl">
             <div class="image-holder">
-            <img :src="imageUrl" :alt="imageAlt" class="apod-image" />
-            <h4>{{ imageAlt }}</h4>
+            <img :src="imageUrl" :alt="imageAlt" class="space-image apod-image" />
+            <h4 class="apod-alt">{{ imageAlt }}</h4>
             </div>
             <p>{{ description }}</p>
         </div>
@@ -51,20 +51,6 @@ onMounted(async () => {
   max-width: 500px;
   text-align: center;
 }
-
-.image-holder {
-  width: 100%;
-  max-width: 600px;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
-
-.apod-image {
-  max-width: 75%;
-  height: auto;
-  border-radius: 0.5rem;
-  border: 2px solid #9c8cff;
-}
   
 .beyond-panel h3 {
   margin: 0.5rem 0;
@@ -73,5 +59,9 @@ onMounted(async () => {
 .beyond-panel p {
   font-size: 0.95rem;
   line-height: 1.5;
+}
+
+.apod-alt {
+  margin-bottom: 5rem;
 }
 </style>

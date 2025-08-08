@@ -10,6 +10,10 @@ body {
     padding: 0;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 @font-face {
     font-family: 'Bitcount';
     src: url('/fonts/Bitcount_Cursive-Medium.ttf') format('truetype');
@@ -69,6 +73,7 @@ header {
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.1rem;
+    margin-top: 4rem;
     margin-bottom: 2rem;
     z-index: 2;
     position: relative;
@@ -91,4 +96,49 @@ header {
 
 p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+@media (max-width: 768px) {
+  
+    .bg-wrap {
+    background: #000 !important;
+    background-size: auto;
+  }
+
+  .content-box {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  header {
+    font-size: 0.9rem;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bg-wrap {
+    background: #000 !important;
+    background-size: auto;
+  }
+
+  .title-box {
+    width: 95%;
+    font-size: 1.5rem;
+    margin: 2rem auto 1.5rem;
+  }
+
+  .content-box {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  header {
+    font-size: 0.8rem;
+    height: 45px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
 }

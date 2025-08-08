@@ -5,6 +5,8 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .svg-box {
@@ -33,7 +35,7 @@
 	left: 125px;
 }
 
-#weather-link {
+#images-link {
 	left: 425px;
 }
 
@@ -62,4 +64,81 @@
 a {
 	text-decoration: none;
 	top: 20px;
+}
+
+.svg-layout {
+	display: block;
+}
+
+.stack-layout {
+	display: none;
+}
+
+@media (max-width: 768px) {
+
+  header {
+	font-size: 1.3rem;
+  }	
+
+  #mission-control {
+	padding: 1.5rem 1rem;
+  }
+
+  .title-box {
+	width: 90%;
+	font-size: 2.5rem;
+	margin: 4rem auto 1.5rem;
+  }
+
+  .svg-layout {
+    display: none;
+  }
+
+  .svg-box {
+	display: none;
+  }
+
+  .stack-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: space-around;
+	min-height: 60vh;
+    margin-top: 2rem;
+  }
+
+  .stack-layout a {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+	width: 90%;
+	box-sizing: border-box;
+  }
+
+  .stack-layout a:hover {
+    background-color: #222;
+  }
+}
+
+@media (max-width: 480px) {
+   header {
+	font-size: 1.2rem;
+  }
+
+  .title-box {
+	width: 95%;
+	font-size: 2rem;
+	margin: 3rem auto 1.5rem;
+  }
+
+  .stack-layout a {
+	font-size: 2rem;
+	padding: 0.8rem;
+	width: 100%;
+	box-sizing: border-box;
+  }
 }

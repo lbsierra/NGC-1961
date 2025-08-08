@@ -10,7 +10,6 @@
         <TabsWrapper :activeTab="activeTab" @selectTab="activeTab = $event" />
       </section>
     </aside>
->
     <main id="space-content" class="content-box">
       <TabContent :activeTab="activeTab" />
     </main>
